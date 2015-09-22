@@ -4,7 +4,7 @@
 		setEqualHeight();  //-- установка блокам одинаковой высоты
 		initSliders(); // -- инициализация слайдеров
 		animateInputLabel();  //-- установка классов текстовым полям для анимации подсказок
-		animateDishTabs();  //-- анимирование переключения табов по клику на блюде в карусели
+		
 	
 		
 	});
@@ -70,41 +70,6 @@
 
 	} // initModalImg ()
 
-	function animateDishTabs() {
-
-		var tabCtrls = $('.js-dish-tab')
-
-		tabCtrls.each( function() {
-			
-			var activeClass = 'is-active';
-
-			$(this).on('click', function(event) {
-				event.preventDefault();
-
-				var tabCtrl = $(this);
-				var tabIndex = tabCtrl.data('tab');
-
-				var tabs = $('.dish-tabs__tab');
-				var targetTab = $('.dish-tabs__tab_num_' + tabIndex);
-
-				tabs.removeClass( activeClass );
-				targetTab.addClass( activeClass );
-
-				tabCtrls.removeClass( activeClass );
-				tabCtrl.addClass( activeClass );
-
-				console.log(tabIndex);
-
-				$(window).scrollTo('.js-scroll-to-this', 500);
-			});
-
-
-			
-
-
-		});
-		
-	} // animateDishTabs()
 
 	function initSliders() {
 
@@ -155,6 +120,50 @@
 			maxSlides: 4,
 			infiniteLoop: false,
 			hideControlOnEnd: true
+		});
+
+		var detailSlider = $('.js-dish-detail-slider');
+		detailSlider.bxSlider({
+			auto: true,
+			autoHover: true,
+			mode: 'fade',
+			speed: 700,
+			pause: 5000,
+			//slideWidth: 189,
+			//slideMargin: 60,
+			controls: true,
+			pager: false,
+			minSlides: 1,
+			maxSlides: 1,
+			infiniteLoop: false,
+			hideControlOnEnd: true,
+			adaptiveHeight: true
+		});
+
+		var tabCtrls = $('.js-dish-tab');
+
+		tabCtrls.each( function() {
+			
+			var activeClass = 'is-active';
+
+			$(this).on('click', function(event) {
+				event.preventDefault();
+
+				var tabCtrl = $(this);
+				var tabIndex = tabCtrl.data('tab');
+				var sliderIndex = parseInt(tabIndex - 1);
+
+				detailSlider.goToSlide( sliderIndex );
+
+				tabCtrls.removeClass( activeClass );
+				tabCtrl.addClass( activeClass );
+
+				console.log(tabIndex, sliderIndex);
+
+				$(window).scrollTo('.js-scroll-to-this', 500);
+			});
+
+
 		});
 
 

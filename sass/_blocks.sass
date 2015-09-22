@@ -818,8 +818,6 @@
 
 .dish-inf
 
-	margin-bottom: 65px
-
 	&__h
 		text-align: left
 	
@@ -838,11 +836,13 @@
 
 	&__lst
 		display: inline-block
-		margin: 0 45px 0 0
-		padding: 0
+		margin: 0
+		padding: 0 45px 0 0
 		width: 165px
 		list-style-type: none
 		font-style: italic
+		vertical-align: top
+		@extend %bszbb
 
 
 	&__i
@@ -867,6 +867,105 @@
 /* dish-tabs
 /* ---------------------------------------END--- */
 
+
+/* dish-detail-slider
+/* --------------------------------------------- */
+
+.dish-detail-slider
+	margin-left: 32px
+	margin-right: 32px
+	margin-bottom: 65px
+
+	&__h
+		font-size: 16px
+		line-height: 1.3
+		font-weight: bold
+		color: #000
+		text-align: center
+
+		.is-active &
+			color: #d00008
+
+	&__img-wrap
+		padding-bottom: 20px
+		border-bottom: none
+		display: block
+		cursor: pointer
+		outline: none !important
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+
+
+	.bx-wrapper
+		padding: 0
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		//background: yellow
+		width: 38px
+		height: 38px
+		top: -60px
+		margin-top: 0
+		+transition-property(opacity)
+		+opacity(0.5)
+		background: none
+
+		&:hover
+			+opacity(1)
+
+
+	.bx-wrapper .bx-prev
+		left: -60px
+
+		&:active
+			margin-left: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-prev") )/2
+			margin-top: - image-height( sprite-path("arrow-prev") )/2
+			+sprite-icon("arrow-prev")
+
+	.bx-wrapper .bx-next
+		right: -60px
+
+		&:active
+			margin-right: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-next") )/2
+			margin-top: - image-height( sprite-path("arrow-next") )/2
+			+sprite-icon("arrow-next")
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+
+	&__i
+		margin: 0
+		//padding: 0 30px
+		position: relative
+		//width: 189px !important
+		//background: red
+
+	
+
+/* dish-detail-slider
+/* ---------------------------------------END--- */
 
 
 /* dish-slider
