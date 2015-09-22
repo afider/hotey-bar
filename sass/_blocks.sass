@@ -1,0 +1,1843 @@
+%bszbb
+	+box-sizing(border-box)
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+
+/* centered
+/* --------------------------------------------- */
+
+.centered
+	margin: auto
+	width: $page_w
+	+box-sizing(border-box)
+
+/* centered
+/* ---------------------------------------END--- */
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	min-width: $page_w
+	position: relative
+	width: 100%
+
+	
+	&__header
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: #fefefe url("../img/header.jpg") 0 0 repeat
+
+			.is-main &
+				+opacity(.8)
+
+	&__header-body
+		position: relative
+		height: 110px
+
+
+	&__body
+		
+
+	&__mainbar
+		//float: left
+		//width: 100%
+		margin: 0 $side-space 25px $side-space
+
+	&__content
+		position: relative
+		margin: 0
+		min-height: 20px
+		padding: 34px 50px
+		background: #fff
+		+box-shadow(-0.5px 0.9px 8px rgba(0, 0, 2, 0.13))
+		min-height: 200px
+
+	&_tp_menu &__content
+		+box-shadow(2px 2px 9px rgba(0, 0, 2, 0.17))
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: -32px
+			height: 50px
+			left: -1100px
+			width: 1107px
+			
+			background: url("../img/page-top.png") right 0 no-repeat
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: -1100px
+			width: 1100px
+			+box-shadow(-0.5px 0.9px 9px rgba(0, 0, 2, 0.17))
+			//+background-image(linear-gradient(to right, #eaeaea 0%,#eaeaea 76%,#efefef 80%,#f8f8f8 83%,#fdfdfd 86%,#fdfdfd 88%,#f8f8f8 91%,#f8f8f8 93%,#fdfdfd 95%,#fdfdfd 96%,#fafafa 97%,#eeeeee 99%,#ededed 99%,#efefef 100%,#ededed 100%,#f1f1f1 100%,#ededed 100%))
+			background: #eaeaea url("../img/page.gif") 0 0 repeat-y
+
+
+	&_tp_menu &__content
+		background-image: url("../img/pages-top.gif")
+		background-position: 0 0
+		background-repeat: repeat-x
+		padding-top: 30px
+
+	&__sidebar
+		float: left
+		width: 220px
+
+		&_lt_left
+			margin-left: -100%
+			background: #bfdcf3
+
+		&_lt_right
+			margin-left: -220px
+			background: #ffaa30
+
+	&__footer
+		position: relative
+		//background: #f1acf2
+		min-width: $page_w
+
+	&__footer-body
+		padding: 0 $side-space * 2
+	
+/* page
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	display: block
+	position: absolute
+	width: 149px
+	height: 80px
+	border-bottom: none
+	top: 20px
+	left: $side-space + 50
+
+	&__img
+		display: block
+
+	
+/* logo
+/* ---------------------------------------END--- */
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	margin-bottom: 20px
+	width: 100%
+	border: 2px solid #e9ecee
+
+	&__h td,
+	& th 
+		font-size: 13px
+		font-weight: bold
+		color: #888
+		background: #e9ecee
+
+	& th,
+	& td
+		padding: 10px 14px
+		border-bottom: 1px solid #e9ecee
+
+	&__line
+		background: #f6f6f6
+
+	
+/* table
+/* ---------------------------------------END--- */
+
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	@extend %clear
+	position: absolute
+	top: 34px
+	left: 277px
+	font-size: 15px
+	text-transform: uppercase
+	font-weight: bold
+
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+	&__i
+		margin: 0
+		padding: 0
+		float: left
+
+	&__a
+		position: relative
+		display: block
+		border-bottom: none
+		padding: 10px 21px
+		+link-color ($color: #000, $color_hover: $link_color, $color_visited: none)
+
+		.is-active &
+			color: $link_color
+
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				bottom: -3px
+				left: 50%
+				margin-left: -4px
+				width: 8px
+				height: 8px
+				border-radius: 4px
+				background: $link_color
+		
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* inf
+/* --------------------------------------------- */
+
+.inf
+	position: absolute
+	right: $side-space + 60
+	top: 22px
+	color: #000
+	padding-left: image-width( sprite-path("location") ) + 15
+	line-height: 1.3
+	
+	&__act
+		display: block
+		position: absolute
+		top: 13px
+		left: 0
+		+sprite-icon("location")
+		border-bottom: none
+
+	&__address
+		font-weight: bold
+		@extend %font-medium
+		font-size: 16px
+		margin-bottom: 3px
+
+	&__phone
+		color: #B00
+		font-size: 20px
+		font-weight: bold
+
+	&__phone-code
+		font-size: 14px
+		font-weight: normal
+		
+
+
+/* inf
+/* ---------------------------------------END--- */
+
+
+/* main-h
+/* --------------------------------------------- */
+
+.main-h
+	margin: 0
+	padding: 21px 100px
+	text-align: center
+	
+
+	&__h
+		display: inline-block
+		position: relative
+		margin: 0
+		padding: 0
+		
+
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			margin-top: -4px
+			width: 8px
+			height: 8px
+			border-radius: 4px
+			background: $link_color
+
+		&:after
+			right: -50px
+			
+		&:before
+			left: -50px
+	
+
+/* main-h
+/* ---------------------------------------END--- */
+
+
+/* nav
+/* --------------------------------------------- */
+
+.nav
+	position: relative
+	$local-item-space: 9px
+	font-family: "Roboto"
+	font-size: 15px
+	text-shadow: 0 1px 0 rgba(0, 0, 2, 0.96)
+	//+background-image(linear-gradient(top, #3a3a3a 0%, #232323 50%, #191919 50%, #010101 100%))
+	
+	//
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: #000 url("../img/nav.gif") 0 0 repeat-x
+
+		.is-main &
+			+opacity(.8)
+	
+	&__body
+		@extend %clear
+
+	&__lst
+		margin: 0 $side-space * 2 
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		float: left
+
+	&__a
+		position: relative
+		display: block
+		height: 60px
+		line-height: 60px
+		padding: 0 $local-item-space
+		border-bottom: none
+		+link-color ($color: #fff, $color_hover: #fff, $color_visited: none, $children: ".nav__txt", $animation-time: $link_animation-time)
+
+		.is-active &
+			//color: #9F9999
+
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				bottom: 0
+				left: $local-item-space
+				right: $local-item-space
+				height: 3px
+				background: #ff0000
+
+
+	& &__txt
+		display: inline
+		position: relative
+		text-decoration: none
+		border-bottom-width: 1px
+		border-bottom-style: solid
+		border-color: transparent
+
+	.is-active &__txt
+		color: #9F9999 !important
+		border-bottom: none
+
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			
+
+
+		&:before
+			width: 16px
+			height: 16px
+			bottom: -28px
+			left: 50%
+			margin-left: -8px
+			border-radius: 8px
+			background: #eee
+
+		&:after
+			width: 6px
+			height: 6px
+			bottom: -22px
+			left: 50%
+			margin-left: -3px
+			border-radius: 3px
+			background: #ff0000
+				
+		
+
+/* nav
+/* ---------------------------------------END--- */
+
+
+/* table-cols
+/* --------------------------------------------- */
+
+.table-cols
+	display: table
+	width: 100%
+	@extend %clear
+
+	&__i
+		display: table-cell
+		vertical-align: middle
+
+		&_talig_right
+			text-align: right
+
+		&_talig_center
+			text-align: center
+
+/* table-cols
+/* ---------------------------------------END--- */
+
+
+/* vert-nav
+/* --------------------------------------------- */
+
+.vert-nav
+	display: inline-block
+	font-size: 15px
+	line-height: 1.3
+	margin-bottom: $content_bot_space
+
+	&_space_r
+		margin-right: 90px
+
+	&_space_l
+		margin-left: 90px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		
+	&__a
+		padding: 5px 0
+		display: block
+		border-bottom: none
+		+link-color ($color: #676767, $color_hover: #000, $color_visited: none)
+
+		.is-active &
+			color: #DD155B
+
+/* vert-nav
+/* ---------------------------------------END--- */
+
+
+/* bottom-inf
+/* --------------------------------------------- */
+
+.bottom-inf
+	border-top: 1px solid #dadada
+	@extend %font-light
+
+	&__i
+		vertical-align: middle
+		padding: 17px 0
+
+
+/* bottom-inf
+/* ---------------------------------------END--- */
+
+
+/* made-by
+/* --------------------------------------------- */
+
+.made-by
+	
+	&__a
+		+link-color ($color: #676767, $color_hover: #000, $color_visited: none)
+
+/* made-by
+/* ---------------------------------------END--- */
+
+
+/* counters
+/* --------------------------------------------- */
+
+.counters
+	display: inline-block
+	vertical-align: middle
+
+	a
+		border-bottom: none
+
+	&__i
+		margin-right: 10px
+
+		img
+			display: block
+
+
+/* counters
+/* ---------------------------------------END--- */
+
+
+/* menu-nav
+/* --------------------------------------------- */
+
+.menu-nav
+	text-align: center
+	@extend %font-light
+	font-size: 15px
+	margin-bottom: 60px
+
+	&_space-bottom_small
+		margin-bottom: 30px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 30px
+		padding: 0
+		display: inline-block
+
+	&__a
+		display: block
+		padding: 0 24px
+		height: 43px
+		line-height: 43px
+		border-bottom: none
+		position: relative
+		border-radius: 22px
+		+link-color ($color: #000, $color_hover: #DD155B, $color_visited: none)
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 50%
+			width: 24px
+			margin-left: -12px
+			height: 1px
+			background: #bcbcbc
+
+		.is-active &
+			background-color: #C40000
+			color: #fff
+
+			&:before
+				display: none
+
+
+/* menu-nav
+/* ---------------------------------------END--- */
+
+
+/* teasers
+/* --------------------------------------------- */
+
+.teasers
+	
+
+	&__lst
+		margin: 0 0 0 -48px
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		position: relative
+		margin: 0 0 50px 48px
+		padding: 0 0 40px 0
+		display: inline-block
+		vertical-align: top
+		width: 210px
+		//background: yellow
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 50%
+			margin-left: -37px
+			width: 74px
+			height: 1px
+			background: #d90f43
+
+/* teasers
+/* ---------------------------------------END--- */
+
+
+/* dot
+/* --------------------------------------------- */
+
+.dot
+	display: inline-block
+	vertical-align: middle
+	width: 8px
+	height: 8px
+	border-radius: 4px
+	background: #d00008
+
+/* dot
+/* ---------------------------------------END--- */
+
+
+/* teaser
+/* --------------------------------------------- */
+
+.teaser
+	text-align: center
+
+	&__h
+		@extend %font-thin
+		color: #000
+		font-size: 25px
+		line-height: 1.2
+		margin-bottom: 25px
+
+	&__img
+		display: block
+		margin: 0 auto
+		margin-bottom: 35px
+
+	&__txt
+		font-size: 14px
+		margin-bottom: 25px
+		
+
+	&__dot
+		margin: 0 10px
+	
+	&__inf
+		color: #000
+		font-size: 20px
+
+	&__weight
+		@extend %font-thin
+		font-size: 20px
+		display: inline-block
+		vertical-align: middle
+
+	&__price
+		display: inline-block
+		vertical-align: middle
+
+	&__sup
+		font-size: 11px
+		display: inline-block
+		vertical-align: top
+		position: relative
+		top: 3px
+
+
+
+/* teaser
+/* ---------------------------------------END--- */
+
+
+
+/* page-nav
+/* --------------------------------------------- */
+
+.page-nav
+	text-align: center
+	padding: 13px
+	@extend %font-thin
+	font-size: 18px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: inline-block
+		position: relative
+
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			margin-top: -4px
+			width: 8px
+			height: 8px
+			border-radius: 4px
+			background: $link_color
+
+		&:after
+			right: -15px
+			
+		&:before
+			left: -15px
+		
+	&__i
+		margin: 0 2px
+		padding: 0
+		display: inline-block
+		
+	&__a
+		display: block
+		padding: 0 5px
+		height: 26px
+		line-height: 26px
+		border-bottom: none
+		+transition-property(background, color)
+		+transition-duration(.5s)
+
+		+link-color ($color: #989797, $color_hover: #000)
+
+		&:hover
+			
+
+		.is-active &
+			font-weight: bold
+			color: #000
+			border-bottom-width: 1px
+			border-bottom-style: solid
+			border-bottom-color: #d1d1d1
+	
+
+/* page-nav
+/* ---------------------------------------END--- */
+
+
+/* content-img
+/* --------------------------------------------- */
+
+.content-img
+	display: block
+	height: auto
+	max-width: 100%
+	margin-bottom: $content_bot_space
+
+	&_lt_left
+		float: left
+		margin-right: 35px
+
+
+	&_lt_right
+		float: right
+		margin-left: 35px
+
+
+/* content-img
+/* ---------------------------------------END--- */
+
+
+/* content-video
+/* --------------------------------------------- */
+
+.content-video
+	display: block
+	height: auto
+	max-width: 100%
+	margin-bottom: $content_bot_space
+
+	&_lt_left
+		float: left
+		margin-right: 35px
+
+
+	&_lt_right
+		float: right
+		margin-left: 35px
+
+
+/* content-video
+/* ---------------------------------------END--- */
+
+
+/* dish-inf
+/* --------------------------------------------- */
+
+.dish-inf
+
+	margin-bottom: 65px
+
+	&__h
+		text-align: left
+	
+	&__desc
+		width: 470px
+		padding-right: 70px
+		vertical-align: top
+
+	&__prop
+		vertical-align: top
+
+	&__prop-h
+		//font-family: $font-main
+		@extend %font-light
+		text-align: left
+
+	&__lst
+		display: inline-block
+		margin: 0 45px 0 0
+		padding: 0
+		width: 165px
+		list-style-type: none
+		font-style: italic
+
+
+	&__i
+		
+		
+
+/* dish-inf
+/* ---------------------------------------END--- */
+
+
+/* dish-tabs
+/* --------------------------------------------- */
+
+.dish-tabs
+	
+	&__tab
+		display: none
+
+		&.is-active
+			display: block
+
+/* dish-tabs
+/* ---------------------------------------END--- */
+
+
+
+/* dish-slider
+/* --------------------------------------------- */
+
+.dish-slider
+	margin-bottom: $content_bot_space
+
+	&__h
+		font-size: 16px
+		line-height: 1.3
+		font-weight: bold
+		color: #000
+		text-align: center
+
+		.is-active &
+			color: #d00008
+
+	&__img-wrap
+		padding-bottom: 20px
+		border-bottom: none
+		display: block
+		cursor: pointer
+		outline: none !important
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+
+
+	.bx-wrapper
+		padding: 0
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		//background: yellow
+		width: 38px
+		height: 38px
+		top: 80px
+		margin-top: 0
+		+transition-property(opacity)
+		+opacity(0.5)
+		background: none
+
+		&:hover
+			+opacity(1)
+
+
+	.bx-wrapper .bx-prev
+		left: -60px
+
+		&:active
+			margin-left: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-prev") )/2
+			margin-top: - image-height( sprite-path("arrow-prev") )/2
+			+sprite-icon("arrow-prev")
+
+	.bx-wrapper .bx-next
+		right: -60px
+
+		&:active
+			margin-right: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-next") )/2
+			margin-top: - image-height( sprite-path("arrow-next") )/2
+			+sprite-icon("arrow-next")
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+
+	&__i
+		margin: 0
+		//padding: 0 30px
+		position: relative
+		//width: 189px !important
+		//background: red
+
+	
+
+/* dish-slider
+/* ---------------------------------------END--- */
+
+
+/* gallery-slider
+/* --------------------------------------------- */
+
+.gallery-slider
+	margin-bottom: $content_bot_space + 20
+
+	&__h
+		line-height: 1.3
+		color: #000
+		text-align: center
+		@extend %font-light
+
+	&__img-wrap
+		padding-bottom: 20px
+		border-bottom: none
+		display: block
+		cursor: pointer
+		outline: none !important
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+		+transition-property(box-shadow)
+		+transition-duration(.5s)
+		@include box-shadow(0px 0px 10px rgba(#000, .5))
+
+		&:hover
+			@include box-shadow(0px 0px 10px rgba(#d00008, .9))
+			+transition-duration(.2s)
+
+
+	.bx-wrapper
+		padding: 0
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		//background: yellow
+		width: 38px
+		height: 38px
+		top: 50%
+		margin-top: -17px
+		+transition-property(opacity)
+		+opacity(0.5)
+		background: none
+
+		&:hover
+			+opacity(1)
+
+
+	.bx-wrapper .bx-prev
+		left: -70px
+
+		&:active
+			margin-left: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-prev") )/2
+			margin-top: - image-height( sprite-path("arrow-prev") )/2
+			+sprite-icon("arrow-prev")
+
+	.bx-wrapper .bx-next
+		right: -70px
+
+		&:active
+			margin-right: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-next") )/2
+			margin-top: - image-height( sprite-path("arrow-next") )/2
+			+sprite-icon("arrow-next")
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+
+	&__i
+		margin: 0
+		padding: 10px
+		//padding: 0 30px
+		position: relative
+		//width: 189px !important
+		//background: red
+
+	
+
+/* gallery-slider
+/* ---------------------------------------END--- */
+
+
+
+/* one-item-slider
+/* --------------------------------------------- */
+
+.one-item-slider
+	margin-bottom: $content_bot_space
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+
+
+	.bx-wrapper
+		padding: 0
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		//background: yellow
+		width: 38px
+		height: 38px
+		top: 50%
+		margin-top: -19px
+		+transition-property(opacity)
+		+opacity(0.5)
+		background: none
+
+		&:hover
+			+opacity(1)
+
+
+	.bx-wrapper .bx-prev
+		left: -45px
+
+		&:active
+			margin-left: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-prev") )/2
+			margin-top: - image-height( sprite-path("arrow-prev") )/2
+			+sprite-icon("arrow-prev")
+
+	.bx-wrapper .bx-next
+		right: -45px
+
+		&:active
+			margin-right: -1px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: - image-width( sprite-path("arrow-next") )/2
+			margin-top: - image-height( sprite-path("arrow-next") )/2
+			+sprite-icon("arrow-next")
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+
+	&__i
+		margin: 0
+		//padding: 0 30px
+		position: relative
+		//width: 189px !important
+		//background: red
+
+	.bx-wrapper
+		
+	.bx-wrapper .bx-pager
+		position: absolute
+		left: 0
+		right: 0
+		margin-top: 230px
+		text-align: center
+
+	.bx-wrapper .bx-controls .bx-pager-link
+		border: 0
+		background: #fff
+		+transition-duration(.5s)
+		+transition-property(background)
+		@include box-shadow(0 0 10px rgba(#000, .9))
+
+		&.active,
+		&:hover
+			background: #d00008
+			+transition-duration(.2s)
+
+
+
+
+
+
+	
+
+/* one-item-slider
+/* ---------------------------------------END--- */
+
+
+
+/* main-slider
+/* --------------------------------------------- */
+
+.main-slider
+	width: 100%
+	overflow: hidden
+	position: relative
+	margin-bottom: 30px
+
+	&__img-wrap
+		border-bottom: none
+		display: block
+		cursor: pointer
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+
+	&__i
+		margin: 0
+		//padding: 0 30px
+		position: relative
+		//width: 189px !important
+		//background: red
+
+	
+
+/* main-slider
+/* ---------------------------------------END--- */
+
+
+/* main-slogan
+/* --------------------------------------------- */
+
+.main-slogan
+	position: fixed
+	top: 45%
+	color: #FFF
+	text-shadow: #000 0px 0px 20px
+	margin: 0 20px 0 0
+	font-size: 60px
+	@extend %font-design
+	left: 0
+	right: 0
+	text-align: center
+	line-height: 1.3
+
+/* main-slogan
+/* ---------------------------------------END--- */
+
+
+/* slide-list
+/* --------------------------------------------- */
+
+.slide-list
+	bottom: 55px
+	margin: 0
+	padding: 0
+
+	&:before
+		margin: -19px -35px -16px -35px
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: #000
+		border-radius: 31px
+		+opacity(.45)
+	
+	
+	a
+		border-bottom: none
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			margin-top: -4px
+			margin-left: -4px
+			left: 50%
+			width: 8px
+			height: 8px
+			background: #fff
+			border-radius: 4px
+			+transition-duration(.5s)
+			+transition-property(background)
+	
+	a:hover:before,
+	.current-slide a:before
+		background: #d00008
+		+transition-duration(.2s)
+
+	li.current-slide
+		position: relative
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border: 2px solid #fff
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: -5px
+			left: 50%
+			margin-left: -1px
+			width: 2px
+			height: 5px
+			background: #fff
+			z-index: 10
+
+
+
+/* slide-list
+/* ---------------------------------------END--- */
+
+
+/* tray-button
+/* --------------------------------------------- */
+
+.tray-button
+	position: fixed
+	bottom: 108px
+	left: 50%
+	margin-left: -70px
+	z-index: 10
+	width: 140px
+	height: 30px
+	cursor: pointer
+	border-bottom: none
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		// background: #000
+		// border-radius: 100px 100px 0 0
+		// +opacity(.45)
+		//background: red
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		margin-left: -17.5px
+		top: 15px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 17.5px 10px 17.5px
+		border-color: transparent transparent #fff transparent
+		+opacity(.45)
+		+transition-duration(.5s)
+		+transition-property(opacity)
+
+	&:active:after
+		top: 16px
+	&:hover:after
+		+opacity(1)
+		+transition-duration(.2s)
+
+/* tray-button
+/* ---------------------------------------END--- */
+
+
+/* thumb-tray
+/* --------------------------------------------- */
+
+.thumb-tray
+
+
+/* thumb-tray
+/* ---------------------------------------END--- */
+
+
+
+/* feedback
+/* --------------------------------------------- */
+
+.feedback
+	margin-bottom: $content_bot_space + 20
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 0 25px 0
+		padding: 0
+		position: relative
+
+		@extend %clear
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 50%
+			margin-left: -37px
+			width: 74px
+			height: 1px
+			background: #d00009
+		
+
+	&__name
+		color: #262626
+		font-size: 16px
+		font-weight: bold
+
+	&__date
+		font-size: 12px
+		margin-bottom: 12px
+
+	&__txt
+		padding-left: 22px
+		position: relative
+		margin-bottom: 35px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 5px
+			left: 0
+			+sprite-icon("quotes")
+
+/* feedback
+/* ---------------------------------------END--- */
+
+
+
+
+/* form-elements
+/* --------------------------------------------- */
+
+
+::-webkit-input-placeholder
+	color: $placeholder_color
+	font-style: italic
+
+::-moz-placeholder
+	color: $placeholder_color
+	font-style: italic
+
+::-ms-input-placeholder
+	color: $placeholder_color
+	font-style: italic
+
+
+.form-group
+	margin-bottom: 30px
+
+
+.form-line
+	margin-bottom: $content_bot_space + 10
+
+	&_align_center
+		text-align: center
+
+	&_align_right
+		text-align: right
+
+	&_space_bot
+		margin-bottom: 30px
+
+
+.form-col
+	display: inline-block
+	vertical-align: top
+
+
+.form-child-space .input,
+.form-child-space .field,
+.form-child-space .form-col
+	margin-left: $element-space
+
+	&:first-child
+		margin-left: 0
+
+.form-child-space-m .input,
+.form-child-space-m .field,
+.form-child-space-m .form-col
+	margin-left: $element-space-m
+
+	&:first-child
+		margin-left: 0
+
+.form-space
+	margin-left: $element-space
+
+.form-space-m
+	margin-left: $element-space-m
+
+
+.input
+	font-size: 14px
+	padding: 0 24px
+	width: 300px
+	border: none
+	border: 1px solid #ccdbcf
+	color: #000
+	@extend %bszbb
+
+	background: #fff
+	+transition-property(border, box-shadow)
+	+transition-duration(0.2s)
+	+transition-timing-function(linear)
+
+	border-radius: 21px
+
+	&_space_r
+		margin-right: 15px
+
+	&_w_sm
+		width: 45px
+
+	&_w_m
+		width: 430px
+
+	&_lt_fluid
+		width: 100% !important
+
+	
+	&_tp_required
+		//background-image: url("../img/required.png")
+		background-repeat: no-repeat
+		background-position: 0 center
+
+	&:focus
+		border-color: rgba($focus_color, 0.6)
+		outline: 0
+		outline: thin dotted 9
+		+box-shadow(0 0 5px rgba($focus_color, 0.6))
+
+input.input
+	height: 42px
+	vertical-align: middle
+
+
+textarea.input
+	height: 124px
+	width: 572px
+	padding: 15px
+	vertical-align: top
+
+input.input_stt_error,
+textarea.input_stt_error
+	border: 1px solid #ff0000
+
+select
+	//width: 198px
+	//padding: 6px 0 5px 0
+	//background: #fafafa
+
+.form-label
+	display: block
+	line-height: 1.3
+	margin-bottom: 3px
+	font-style: italic
+
+	&_w_same
+		width: 200px
+
+
+.form-space-label
+	margin-left: 209px
+
+.required-mark
+	color: #ff0000
+	font-size: 17px
+
+.form-legend
+	font-size: 12px
+	display: inline-block
+	vertical-align: middle
+
+.placeholder
+	color: $placeholder_color
+
+.form-success
+	color: #0BAC31
+	font-size: 12px
+	font-style: italic
+
+.form-fail
+	color: #F33434
+	font-size: 12px
+	font-style: italic
+
+/* form-elements
+/* ---------------------------------------END--- */
+
+/* field
+/* --------------------------------------------- */
+
+.field
+	border-radius: 21px
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	padding: 0 24px
+	width: 350px
+	border: 1px solid #ccdbcf
+	background: #fff
+	font-size: 14px
+	cursor: text
+	@extend %bszbb
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s
+	transition: border linear 0.2s, box-shadow linear 0.2s
+
+	&_stt_error
+		border-color: #ff0000
+
+	&_tp_required
+		//background-image: url("../img/required.png")
+		background-repeat: no-repeat
+		background-position: 0 center
+
+	&_tp_textarea
+		vertical-align: top
+		padding: 24px
+
+	&.is-focused
+		border-color: rgba($focus_color, 0.8)
+		outline: 0
+		outline: thin dotted 9
+		+box-shadow( 0 0 5px rgba($focus_color, 0.6))
+
+
+	&_w_fluid
+		width: 100%
+
+	&__input
+		width: 100%
+		display: block
+		padding: 0
+		border: none
+		outline: none
+		background: transparent
+		height: 42px
+		line-height: 24px
+		color: #000
+		font-size: 14px
+
+	&_tp_textarea &__input
+		height: 85px
+		line-height: 1.3
+
+	&_h_contact-mess  &__input
+		height: 127px
+
+	&__label
+		position: absolute
+		top: 9px
+		left: 24px
+		font-size: 14px
+		color: $placeholder_color
+		font-style: italic
+		transition-duration: .2s
+
+		&:after
+			content: ':'
+			display: none
+
+		.is-focused &,
+		.is-filled &
+			top: -21px
+			font-size: 12px
+
+			&:after
+				display: inline
+
+		.is-focused &
+			color: $focus_color
+
+/* field
+/* ---------------------------------------END--- */
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	position: relative
+	font-weight: bold
+	display: inline-block
+	overflow: visible
+	border: none
+	color: #fff !important
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	vertical-align: middle
+	outline: none
+	font-size: 18px
+	text-transform: uppercase
+	padding: 0 24px
+	height: 42px
+	line-height: 42px
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	text-shadow: 0 1px 1px rgba(#000, 0.41)
+	background: #f80b0b
+	+transition-property(background)
+	+transition-duration(.5s)
+	border-radius: 21px
+
+	&:hover
+		background: darken(#f80b0b, 15)
+		+transition-duration(.2s)
+
+
+	&_space_r
+		margin-right: 10px
+
+
+	&:active
+		line-height: 44px
+		
+
+	&_st_disabled,
+	&_st_disabled:active
+		line-height: 30px
+		color: #909090 !important
+		-webkit-box-shadow: none
+		box-shadow: none
+		background: #f4f5f6
+
+
+
+/* button
+/* ---------------------------------------END--- */
+
+
+/* txt-to-right
+/* --------------------------------------------- */
+
+.txt-to-right
+	text-align: right
+
+/* txt-to-right
+/* ---------------------------------------END--- */
+
+
+/* map
+/* --------------------------------------------- */
+
+.map
+	position: relative
+	margin-bottom: $content_bot_space
+
+
+	&__panel
+		position: absolute
+		top: 20px
+		left: 20px
+		z-index: 100
+		display: table
+		width: 300px
+		font-size: 16px
+		color: #3a3a3a
+		line-height: 1.3
+		+box-shadow(0px 0px 15px rgba(#000, .1))
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: #ededed url("../img/bg.jpg") 0 0 repeat
+			@include opacity(.8)
+
+	&__panel-body
+		display: table-cell
+		height: 240px
+		vertical-align: middle
+		position: relative
+		z-index: 2
+		@extend %bszbb
+		padding: 45px 30px
+
+	&__address
+		margin-bottom: 25px
+		padding-left: 29px
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 2px
+			left: 0
+			+sprite-icon("location-sm")
+
+
+	&__phone
+		padding-left: 29px
+		font-size: 25px
+		font-weight: bold
+		margin-bottom: 25px
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 10px
+			left: 0
+			+sprite-icon("phone-sm")
+
+	&__time
+		padding-left: 29px
+		position: relative
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 2px
+			left: 0
+			+sprite-icon("time-sm")
+
+
+
+	&__phone-code
+		font-weight: normal
+		color: #767474
+
+
+/* map
+/* ---------------------------------------END--- */

@@ -1,0 +1,161 @@
+body
+	background: #ededed url("../img/bg.jpg") 0 0 repeat
+	color: $text_color
+	font: normal 14px/1.5 $font_main
+
+	&.is-main
+		background: #000 !important
+
+
+p
+	margin: 0 0 $content_bot_space 0
+
+ul
+	margin: 0 0 $content_bot_space -20px
+
+ol
+	margin: 0 0 $content_bot_space -20px
+
+ul li,
+ol li
+	margin-bottom: 8px
+
+.lst-bullet
+	margin: 0 0 10px 0
+	padding: 0
+
+	& li 
+		display: block
+		padding: 0 0 10px 25px
+		background: url("#{$img_path}list-bullet.png") 10px 0 no-repeat
+		list-style-type: none
+
+
+/*  Headers
+/*  -------------------------------------------- */
+
+#{headings(1, 6)}
+	margin: 35px 0 20px 0
+	padding: 0
+	line-height: 1.2
+	font-weight: normal
+	color: #000
+	text-align: center
+	
+
+#{headings(1, 1)}
+	font-size: 30px
+	margin-bottom: 30px
+	margin-top: 0
+	@extend %font-light
+
+
+#{headings(2, 2)}
+	font-size: 22px
+	margin-bottom: 30px
+
+
+#{headings(3, 6)}
+	font-size: 18px
+
+#{headings(2, 6)}
+	@extend %font-medium
+
+.left-h
+	text-align: left
+
+/* Headers
+/* ---------------------------------------END--- */
+
+
+/* font
+/* --------------------------------------------- */
+
++font-face( $family: "Roboto", $file_name_r: "roboto-regular", $file_name_i: "roboto-italic", $file_name_b: "roboto-bold", $file_name_bi: "roboto-bolditalic")
+
++font-face( $family: "Roboto Medium", $file_name_r: "roboto-medium", $file_name_i: "roboto-mediumitalic")
+
++font-face( $family: "Roboto Light", $file_name_r: "roboto-light", $file_name_i: "roboto-lightitalic")
+
++font-face( $family: "Roboto Thin", $file_name_r: "roboto-thin", $file_name_i: "roboto-thinitalic")
+
++font-face( $family: "Japan", $file_name_r: "eh-webfont")
+
+
+%font-medium
+	font-family: 'Roboto Medium', $font_main
+.font-medium
+	@extend %font-medium
+
+
+%font-light
+	font-family: 'Roboto light', $font_main
+.font-light
+	@extend %font-light
+
+%font-thin
+	font-family: 'Roboto Thin', $font_main
+.font-thin
+	@extend %font-thin
+
+%font-design
+	font-family: 'Japan', $font_main
+.font-design
+	@extend %font-thin
+
+	
+/* Section name
+/* ---------------------------------------END--- */
+
+
+/* font
+/* ---------------------------------------END--- */
+
+
+/* Links
+/* --------------------------------------------- */
+
+a, .u
+	text-decoration: none
+	border-bottom-width: 1px
+	border-bottom-style: solid
+
+	+link-color ($color: $link_color, $color_hover: $link_color_hover, $color_visited: $link_color_visited, $animation-time: $link_animation-time)
+
+	&:focus
+		outline: thin dotted
+
+
+.dashed,
+.dotted
+	cursor: pointer
+
+
+.dashed
+	border-bottom-style: dashed
+
+.dotted
+	border-bottom-style: dotted
+
+/* Links
+/* -------------------------------------END----- */
+
+::-moz-selection
+	background: $selection_bg
+	text-shadow: none
+
+::selection
+	background: $selection_bg
+	text-shadow: none
+
+hr
+	display: block
+	margin: 1em 0
+	padding: 0
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+
+textarea
+	resize: vertical
+

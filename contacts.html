@@ -1,0 +1,246 @@
+<!doctype html>
+<!--[if IE 8 ]> <html lang="ru-RU" class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="ru-RU" class="ie9"> <![endif]-->
+<!---[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru-RU">
+<!--<![endif]-->
+<head> 
+	<meta charset="utf-8"> 
+	<title>Site name</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/supersized.css">
+	<link rel="stylesheet" href="css/supersized.shutter.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<!--[if lt IE 9]> <script src="js/html5.js"></script><![endif]-->
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
+	<script src="js/common.js"></script>
+</head>
+
+<body>
+	
+
+	<div class="page">
+
+		<header class="page__header">
+			<div class="centered">
+				<div class="page__header-body">
+					<a href="#" class="logo">
+						<img src="img/logo.png" height="80" width="149" alt="Site name">
+					</a>
+
+					<nav class="main-nav">
+						<ul class="main-nav__lst">
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Услуги</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Отзывы</a></li>
+							<li class="main-nav__i is-active"><a href="#" class="main-nav__a">Контакты</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Фотогалерея</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">О нас</a></li>
+						</ul>
+					</nav>
+
+					<div class="inf">
+						<a href="#" class="inf__act" title="Контакты"></a>
+						<div class="inf__address">Ханты-Мансийск <br>ул. Строителей, д.10</div>
+						<div class="inf__phone"><span class="inf__phone-code">+7 3467</span> 32 77 27</div>
+					</div><!-- inf -->
+
+
+				</div><!-- page__header-body -->
+			</div><!-- centered -->
+		</header><!-- page__header -->
+
+		<nav class="nav">
+			<div class="nav__body centered">
+				
+				<ul class="nav__lst">
+					<li class="nav__i is-active">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Блюда от шеф-повара</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Банкетное меню</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Итальянская кухня</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Французские блюда</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Кухня Хантов и Манси</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Восточное меню</div>
+						</a>
+					</li>
+				</ul>
+
+			</div><!-- nav__body -->
+		</nav>
+	
+		<div class="page__body centered clearfix">
+
+			<div class="main-h">
+				<h1 class="main-h__h">Контакты</h1>
+			</div>
+			
+			<div class="page__mainbar">
+				<div class="page__content">
+
+					<div class="map">
+
+						<div class="map__panel">
+							<div class="map__panel-body">
+
+								<div class="map__phone"><span class="map__phone-code">+7 3467</span> 32 77 27</div>
+								<div class="map__address">
+									г. Ханты-Мансийск <br>
+									ул. Строителей, д.10.
+								</div>
+								<div class="map__time">
+									<b>ВТ — ЧТ, ВС</b>: 18.00 - 01.00 <br>
+									<b>ПТ — СБ</b>: 18.00 - 05.00
+								</div>
+							</div><!-- map__panel-body -->
+						</div><!-- map__panel -->
+
+						<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+						<div id="map" style="width: 100%; height: 460px;"></div>
+						<script type="text/javascript">
+						    ymaps.ready(init);
+						    var myMap;
+						
+						    function init(){     
+						        myMap = new ymaps.Map ("map", {
+						            center: [60.99536725, 69.06295550],
+						            zoom: 15
+						        }),
+
+							    myMap.controls
+							        // Кнопка изменения масштаба.
+							        .add('zoomControl', { right: 10, top: 10 })
+							        // Список типов карты
+							        .add('typeSelector', { right: 150, top: 10 })
+							        // Стандартный набор кнопок
+							       .add('mapTools', { right: 35, top: 10 }),
+
+						        myPlacemark = new ymaps.Placemark([60.99536725, 69.06295550], {
+						            // Свойства.
+						            hintContent: 'Хотэй'
+						        }, {
+						            // Опции.
+						            // Своё изображение иконки метки.
+						            iconImageHref: 'img/map-icon.png',
+						            // Размеры метки.
+						            iconImageSize: [40, 40],
+						            // Смещение левого верхнего угла иконки относительно
+						            // её "ножки" (точки привязки).
+						            iconImageOffset: [-40, -40]
+						        });
+
+							    // Добавляем все метки на карту.
+							    myMap.geoObjects
+							        .add(myPlacemark)
+
+						    }
+						</script>
+
+					</div><!-- map -->
+					
+					<p>Не следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании модели развития. Повседневная практика показывает, что рамки и место обучения кадров способствует подготовки и реализации новых предложений. Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Не следует, однако забывать, что новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Равным образом новая модель организационной деятельности играет важную роль в формировании существенных финансовых и административных условий. Идейные соображения высшего порядка, а также укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.</p>
+
+
+				</div><!-- page__mainbar -->
+			</div><!-- page__content -->
+			
+		</div><!-- page__body -->
+		
+	</div><!-- page -->
+	
+	<footer class="page__footer">
+		<div class="centered page__footer-body">
+
+			<div class="table-cols">
+				<div class="table-cols__i">
+
+					<div class="vert-nav vert-nav_space_r">
+						<ul class="vert-nav__lst">
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Бюда от шеф-повара</a></li>
+							<li class="vert-nav__i is-active"><a href="#" class="vert-nav__a">Банкетное меню</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Итальянская кухня</a></li>
+						</ul>
+					</div><!-- vert-nav -->
+
+					<div class="vert-nav vert-nav_space_r">
+						<ul class="vert-nav__lst">
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Французская кухня</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Кухня Хантов и Манси</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Восточная кухня</a></li>
+						</ul>
+					</div><!-- vert-nav -->
+
+				</div><!-- table-cols__i -->
+				<div class="table-cols__i table-cols__i_talig_right">
+
+					<div class="vert-nav vert-nav_space_l">
+						<ul class="vert-nav__lst">
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Главная</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Услуги</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Отзывы</a></li>
+						</ul>
+					</div><!-- vert-nav -->
+
+					<div class="vert-nav vert-nav_space_l">
+						<ul class="vert-nav__lst">
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Контакты</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">Фотогалерея</a></li>
+							<li class="vert-nav__i"><a href="#" class="vert-nav__a">О нас</a></li>
+						</ul>
+					</div><!-- vert-nav -->
+
+				</div><!-- table-cols__i -->
+			</div><!-- table-cols -->
+
+			<div class="bottom-inf table-cols">
+				<div class="bottom-inf__i table-cols__i">
+
+					<div class="counters">
+						<div class="counters__i">
+							<img src="img/content/counters-1.jpg" height="31" width="88" alt="">
+						</div>
+					</div><!-- counters -->
+
+				</div><!-- table-cols__i -->
+				<div class="bottom-inf__i table-cols__i table-cols__i_talig_right">
+					
+					<div class="made-by">
+						Разработка — <a href="#" class="made-by__a">Югорские Интернет Решения</a>
+					</div>
+
+				</div><!-- table-cols__i -->
+			</div><!-- table-cols -->
+
+
+		</div><!-- centered -->
+	</footer><!-- page__footer -->
+	
+</body>
+
+</html>
+

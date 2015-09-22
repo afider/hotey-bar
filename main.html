@@ -1,0 +1,197 @@
+<!doctype html>
+<!--[if IE 8 ]> <html lang="ru-RU" class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="ru-RU" class="ie9"> <![endif]-->
+<!---[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru-RU">
+<!--<![endif]-->
+<head> 
+	<meta charset="utf-8"> 
+	<title>Site name</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/supersized.css">
+	<link rel="stylesheet" href="css/supersized.shutter.css">
+
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<!--[if lt IE 9]> <script src="js/html5.js"></script><![endif]-->
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
+
+	<script src="js/main-gallery/supersized.3.2.7.js"></script>
+	<script src="js/main-gallery/theme/supersized.shutter.js"></script>
+	
+	<script src="js/common.js"></script>
+	<script>
+		
+		$(function() {
+
+			$.supersized({
+				image_protect: 0,
+				// Functionality
+				slide_interval: 4000, // Length between transitions
+				transition: 1, // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+				transition_speed: 1200, // Speed of transition
+
+				vertical_center: 0,
+														   
+				// Components							
+				slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+				slides: [ // Slideshow Images
+							{	
+								image : 'img/content/main-gallery/1.jpg', 
+								title : 'Свежие продукты',
+								thumb : 'img/content/main-gallery/1.jpg', 
+								//url : '#1'
+							},
+
+							{	
+								image : 'img/content/main-gallery/3.jpg', 
+								title : 'Уютный интерьер', 
+								thumb : 'img/content/main-gallery/3.jpg', 
+								//url : '#3'
+							},
+							{	
+								image : 'img/content/main-gallery/4.jpg', 
+								title : 'Шеф-повар  <br/>  профессионал', 
+								thumb : 'img/content/main-gallery/4.jpg', 
+								//url : '#4'
+							},
+							{	
+								image : 'img/content/main-gallery/5.jpg', 
+								title : 'Тактичное <br/> обслуживание', 
+								thumb : 'img/content/main-gallery/5.jpg', 
+								url : '#5'
+							},
+							
+							{	
+								image : 'img/content/main-gallery/2.jpg', 
+								title : 'У нас вкусно', 
+								thumb : 'img/content/main-gallery/2.jpg', 
+								//url : '#2'
+							},  
+						]
+			});
+
+			
+		});
+	</script>
+</head>
+
+<body class="is-main">
+
+<!--Arrow Navigation-->
+<a id="prevslide" class="load-item"></a>
+<a id="nextslide" class="load-item"></a>
+
+<div id="thumb-tray" class="load-item thumb-tray">
+	<div id="thumb-back"></div>
+	<div id="thumb-forward"></div>
+</div>
+
+<!--Time Bar-->
+<div id="progress-back" class="load-item">
+	<div id="progress-bar"></div>
+</div>
+
+<!--Control Bar-->
+<div id="controls-wrapper" class="load-item">
+	<div id="controls">
+	
+		<!--Slide counter-->
+		<div id="slidecounter">
+			
+		</div>
+		
+		<!--Slide captions displayed here-->
+		
+		
+	</div>
+</div>
+
+<div id="slidecaption" class="main-slogan"></div>
+
+<!--Navigation-->
+<ul id="slide-list" class="slide-list"></ul>
+
+<!--Thumb Tray button-->
+<a id="tray-button" class="tray-button"></a>
+
+	<div class="page">
+
+		<header class="page__header">
+			<div class="centered">
+				<div class="page__header-body">
+					<a href="#" class="logo">
+						<img src="img/logo.png" height="80" width="149" alt="Site name">
+					</a>
+
+					<nav class="main-nav">
+						<ul class="main-nav__lst">
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Услуги</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Отзывы</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Контакты</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">Фотогалерея</a></li>
+							<li class="main-nav__i"><a href="#" class="main-nav__a">О нас</a></li>
+						</ul>
+					</nav>
+
+					<div class="inf">
+						<a href="#" class="inf__act" title="Контакты"></a>
+						<div class="inf__address">Ханты-Мансийск <br>ул. Строителей, д.10</div>
+						<div class="inf__phone"><span class="inf__phone-code">+7 3467</span> 32 77 27</div>
+					</div><!-- inf -->
+
+
+				</div><!-- page__header-body -->
+			</div><!-- centered -->
+		</header><!-- page__header -->
+
+		<nav class="nav">
+			<div class="nav__body centered">
+				
+				<ul class="nav__lst">
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Блюда от шеф-повара</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Банкетное меню</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Итальянская кухня</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Французские блюда</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Кухня Хантов и Манси</div>
+						</a>
+					</li>
+					<li class="nav__i">
+						<a href="#" class="nav__a">
+							<div class="nav__txt">Восточное меню</div>
+						</a>
+					</li>
+				</ul>
+
+			</div><!-- nav__body -->
+		</nav>
+	
+		
+	</div><!-- page -->
+
+	
+</body>
+
+</html>
+
